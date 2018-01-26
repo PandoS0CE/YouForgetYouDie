@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetKeyDown("space") && jumpEnable == true)
         {
-            rb.AddForce(new Vector2(0,1) * jumpPower, ForceMode2D.Impulse);
+            rb.velocity = new Vector2(0, 1) * jumpPower; 
             jumpEnable = false;
         }
     }
