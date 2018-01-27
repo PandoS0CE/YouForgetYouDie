@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     // Variable saut
+    # region 
     private bool isJumping = false;
     private bool canJump = true;
-    public float jumpPower;
+    public float jumpPower = 5;
     private Vector2 posInitSaut;
-    public float jumpHeigth;
+    public float jumpHeigth = 2;
+    #endregion
 
     // Use this for initialization
     void Start()
@@ -32,8 +34,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        canJump = collision.collider.gameObject.CompareTag("Ground");
+        if(collision.collider.gameObject.CompareTag("Ground"))
+        {
+            canJump = true;
+        }
+
+        if (collision.collider.gameObject.CompareTag("Death"))
+        {
+            gameObject.SetActive(false);
+        }
     }
+
     void Saut()
     {
         if (Input.GetKeyDown("space") && !isJumping && canJump)
