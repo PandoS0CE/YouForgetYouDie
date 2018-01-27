@@ -24,19 +24,16 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        anim.enabled = false;
+        anim.enabled = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        float moveHorizontal = Input.GetAxis("Horizontal");
-
-        rb.velocity = new Vector2(moveHorizontal, 0) * speed;
         Saut();
         Accroupir();
-        anim.enabled = true;
+        Deplacer();
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -54,6 +51,8 @@ public class PlayerController : MonoBehaviour
 
     void Saut()
     {
+        print("CanJump:" + canJump);
+        print("isJumping:" + isJumping);
         if (Input.GetKeyDown("space") && !isJumping && canJump)
         {
             isJumping = true;
@@ -81,5 +80,14 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isAccroupi", false);
         }
+    }
+
+    void Deplacer()
+    {
+        
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(moveHorizontal, 0) * speed;
+        bool running = moveHorizontal != 0;
+        anim.SetBool("isRunning", running);    
     }
 }
