@@ -63,6 +63,10 @@ public class PlayerController : MonoBehaviour
     {
         //print("CanJump:" + canJump);
         //print("isJumping:" + isJumping);
+        if(!canJump)
+        {
+            anim.SetBool("isRunning", false);
+        }
         if (Input.GetKeyDown("space") && !isJumping && canJump)
         {
             isJumping = true;

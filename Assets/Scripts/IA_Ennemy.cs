@@ -19,5 +19,14 @@ public class IA_Ennemy : MonoBehaviour {
 		x_cible = cible.transform.position.x - this.transform.position.x;
 		x_cible = x_cible / Mathf.Abs (x_cible);
 		rb.velocity = new Vector2 (x_cible, 0);
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if(rb.velocity.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }
 	}
 }
