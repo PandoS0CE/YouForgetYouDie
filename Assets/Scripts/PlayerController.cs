@@ -30,10 +30,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Saut();
-        Accroupir();
+        if (rb.velocity.x >= 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+
         Deplacer();
         
+        Accroupir();
+
+        Saut();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,8 +61,8 @@ public class PlayerController : MonoBehaviour
 
     void Saut()
     {
-        print("CanJump:" + canJump);
-        print("isJumping:" + isJumping);
+        //print("CanJump:" + canJump);
+        //print("isJumping:" + isJumping);
         if (Input.GetKeyDown("space") && !isJumping && canJump)
         {
             isJumping = true;
@@ -87,7 +97,7 @@ public class PlayerController : MonoBehaviour
         
         float moveHorizontal = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveHorizontal, 0) * speed;
-        bool running = moveHorizontal != 0;
+        bool running = rb.velocity.x != 0;
         anim.SetBool("isRunning", running);    
     }
 }
