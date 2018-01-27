@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         anim.enabled = true;
-        buttonRestart.onClick.AddListener(Restart);
     }
 
     // Update is called once per frame
@@ -119,8 +118,5 @@ public class PlayerController : MonoBehaviour
         loseText.text = "You're dead";
     }
 
-    private void Restart()
-    {
-        EditorSceneManager;
-    }
+    
 }
