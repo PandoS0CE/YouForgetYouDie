@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-<<<<<<< HEAD
 using UnityEngine.SceneManagement;
-=======
 
->>>>>>> c6528712934ffe5539f0706ad606f602c56f9ab9
 
 public class PlayerController : MonoBehaviour
 {
@@ -36,11 +33,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         anim.enabled = true;
-<<<<<<< HEAD
         buttonRestart.onClick.AddListener(Restart);
         buttonRestart.gameObject.SetActive(false);
-=======
->>>>>>> c6528712934ffe5539f0706ad606f602c56f9ab9
     }
 
     // Update is called once per frame
@@ -127,13 +121,8 @@ public class PlayerController : MonoBehaviour
         loseText.text = "You're dead";
         buttonRestart.gameObject.SetActive(true);
     }
-
-<<<<<<< HEAD
     private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
-=======
-    
->>>>>>> c6528712934ffe5539f0706ad606f602c56f9ab9
 }
