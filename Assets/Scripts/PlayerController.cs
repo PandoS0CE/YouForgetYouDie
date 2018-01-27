@@ -14,13 +14,17 @@ public class PlayerController : MonoBehaviour
     public float jumpPower = 5;
     private Vector2 posInitSaut;
     public float jumpHeigth = 2;
-    #endregion
+    #endregion Saut
+
+    // Animations
+    Animator anim;
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        GetComponent<Animator>().SetBool("AnimPlayer", false);
+        anim = GetComponent<Animator>();
+        anim.enabled = false;
     }
 
     // Update is called once per frame
