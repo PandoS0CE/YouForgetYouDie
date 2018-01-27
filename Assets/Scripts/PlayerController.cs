@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector2(moveHorizontal, 0) * speed;
         Saut();
+        Accroupir();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -69,11 +70,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void Accriupir()
+    void Accroupir()
     {
         if (Input.GetKey("down"))
         {
-            GetComponent<Animator>().SetBool("AnimPlayer", true);
+            anim.SetBool("isSquat", true);
+        }
+        else
+        {
+            anim.SetBool("isSquat", true);
         }
     }
 }
