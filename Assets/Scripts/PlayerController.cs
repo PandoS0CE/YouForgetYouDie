@@ -69,11 +69,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void Accriupir()
+    void Accroupir()
     {
         if (Input.GetKey("down"))
         {
-            GetComponent<Animator>().SetBool("AnimPlayer", true);
+            anim.enabled = true;
         }
     }
 }
