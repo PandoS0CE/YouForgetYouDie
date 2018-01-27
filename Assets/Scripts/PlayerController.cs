@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
     private Rigidbody2D rb;
     public float speed;
 
@@ -13,19 +14,21 @@ public class PlayerController : MonoBehaviour {
     private Vector2 posInitSaut;
     public float jumpHeigth;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
 
         float moveHorizontal = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(moveHorizontal, 0) * speed;
         Saut();
-	}
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -39,7 +42,7 @@ public class PlayerController : MonoBehaviour {
             canJump = false;
             posInitSaut = transform.position;
         }
-        if(transform.position.y - posInitSaut.y < jumpHeigth && isJumping)
+        if (transform.position.y - posInitSaut.y < jumpHeigth && isJumping)
         {
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
@@ -47,6 +50,6 @@ public class PlayerController : MonoBehaviour {
         {
             isJumping = false;
         }
-        
+
     }
 }
