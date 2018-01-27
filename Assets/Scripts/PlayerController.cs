@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GetComponent<Animator>().SetBool("AnimPlayer", false);
     }
 
     // Update is called once per frame
@@ -62,5 +63,13 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
 
+    }
+
+    void Accriupir()
+    {
+        if (Input.GetKey("down"))
+        {
+            GetComponent<Animator>().SetBool("AnimPlayer", true);
+        }
     }
 }
