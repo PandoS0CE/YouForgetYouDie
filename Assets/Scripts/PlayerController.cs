@@ -10,11 +10,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public float speed;
 
-    //ui
+    // ui
     #region
     public Text loseText;
     public Button buttonRestart;
     #endregion
+
     // Variable saut
     #region 
     private bool isJumping = false;
@@ -23,6 +24,20 @@ public class PlayerController : MonoBehaviour
     private Vector2 posInitSaut;
     public float jumpHeigth = 2;
     #endregion Saut
+
+    // Boolean compétence
+    #region
+    public bool forgetJump;
+    public bool forgetSquat;
+    public bool forgetGoLeft;
+
+    private bool hasJump = false;
+    private bool hasSquat = false;
+    private bool hasGoLeft = false;
+    #endregion
+
+
+
 
     // Animations
     Animator anim;
@@ -73,11 +88,12 @@ public class PlayerController : MonoBehaviour
     {
         //print("CanJump:" + canJump);
         //print("isJumping:" + isJumping);
+
         if(!canJump)
         {
             anim.SetBool("isRunning", false);
         }
-        if (Input.GetKeyDown("space") && !isJumping && canJump)
+        if (Input.GetKeyDown("space") && !isJumping && canJump && !forgetJump)
         {
             isJumping = true;
             canJump = false;
@@ -96,7 +112,7 @@ public class PlayerController : MonoBehaviour
 
     void Accroupir()
     {
-        if (Input.GetKey("down"))
+        if (Input.GetKey("down") && !forgetSquat )
         {
             anim.SetBool("isAccroupi", true);
         }
@@ -110,7 +126,16 @@ public class PlayerController : MonoBehaviour
     {
         
         float moveHorizontal = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveHorizontal, 0) * speed;
+        //print(moveHorizontal);
+        if(rb.velocity.x < 0 & forgetGoLeft)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(moveHorizontal, 0) * speed;
+
+        }
         bool running = rb.velocity.x != 0;
         anim.SetBool("isRunning", running);    
     }
@@ -121,6 +146,7 @@ public class PlayerController : MonoBehaviour
         loseText.text = "You're dead";
         buttonRestart.gameObject.SetActive(true);
     }
+
     private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
