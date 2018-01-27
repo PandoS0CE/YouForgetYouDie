@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;
 
+    //ui
+    #region
+    public Text loseText;
+    #endregion
     // Variable saut
-    # region 
+    #region 
     private bool isJumping = false;
     private bool canJump = true;
     public float jumpPower = 5;
@@ -55,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.collider.gameObject.CompareTag("Death"))
         {
-            gameObject.SetActive(false);
+            Death();
         }
     }
 
@@ -103,5 +108,11 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveHorizontal, 0) * speed;
         bool running = rb.velocity.x != 0;
         anim.SetBool("isRunning", running);    
+    }
+
+    void Death()
+    {
+        gameObject.SetActive(false);
+        loseText.text = "Your dead";
     }
 }
