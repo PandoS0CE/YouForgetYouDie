@@ -38,11 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1529572104880052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: -7.24, y: -3.012, z: 0}
-=======
-  m_LocalPosition: {x: -8.78, y: -1.32, z: 0}
->>>>>>> 85fd7ee54e7d4932eb6168d5153e5af9b94629f7
+  m_LocalPosition: {x: -2.48, y: -0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,7 +58,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -121,18 +117,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc0a429093b98c4384b2bbd0756fb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 6
   loseText: {fileID: 0}
   buttonRestart: {fileID: 0}
-  jumpPower: 8
-  jumpHeigth: 2
-<<<<<<< HEAD
-  globalControle: {fileID: 0}
-=======
+  jumpPower: 10
+  jumpHeigth: 1.2
   forgetJump: 0
   forgetSquat: 0
   forgetGoLeft: 0
->>>>>>> 85fd7ee54e7d4932eb6168d5153e5af9b94629f7
+  globalControle: {fileID: 0}
 --- !u!212 &212167684881684408
 SpriteRenderer:
   m_ObjectHideFlags: 1

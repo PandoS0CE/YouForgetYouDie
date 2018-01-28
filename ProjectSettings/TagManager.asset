@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - WallLeft
   - wallRight
+  - PassageLvSuivant
   layers:
   - Default
   - TransparentFX

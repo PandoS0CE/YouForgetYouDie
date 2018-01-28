@@ -595,25 +595,13 @@ GameObject:
   - component: {fileID: 1583778480}
   - component: {fileID: 1583778479}
   - component: {fileID: 1583778478}
-  - component: {fileID: 1583778477}
   m_Layer: 0
   m_Name: bunker_lv1
-  m_TagString: NextLevel
+  m_TagString: PassageLvSuivant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1583778477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1583778476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81977bc02ea942344ae2789117177608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1583778478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -914,7 +902,7 @@ Prefab:
       objectReference: {fileID: 770893411}
     - target: {fileID: 1246704586445776, guid: 9f7342d294b02b94aa36eefd84c0d7b5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f7342d294b02b94aa36eefd84c0d7b5, type: 2}

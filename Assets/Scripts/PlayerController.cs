@@ -27,9 +27,9 @@ public class PlayerController : MonoBehaviour
 
     // Boolean compétence
     #region
-    private bool forgetJump;
-    private bool forgetSquat;
-    private bool forgetGoLeft;
+    public bool forgetJump;
+    public bool forgetSquat;
+    public bool forgetGoLeft;
 
     private bool hasJump = false;
     private bool hasSquat = false;
@@ -37,9 +37,6 @@ public class PlayerController : MonoBehaviour
 
     public GlobalControle globalControle;
     #endregion
-
-
-
 
     // Animations
     Animator anim;
@@ -53,6 +50,7 @@ public class PlayerController : MonoBehaviour
         anim.enabled = true;
         buttonRestart.onClick.AddListener(Restart);
         buttonRestart.gameObject.SetActive(false);
+        print("start");
         LoadForget();
     }
 
@@ -86,11 +84,16 @@ public class PlayerController : MonoBehaviour
         {
             Death();
         }
-    }
 
-    private void OnDestroy()
-    {
-        SaveForget();
+        else if (collision.collider.gameObject.CompareTag("PassageLvSuivant"))
+        {
+            print("Save");
+            SaveForget();
+            GlobalControle.Instance.currentLevel++;
+            string lvSuivant = "level" + (GlobalControle.Instance.currentLevel);
+            SceneManager.LoadScene(lvSuivant, LoadSceneMode.Single);
+
+        }
     }
 
     void Saut()
@@ -108,8 +111,7 @@ public class PlayerController : MonoBehaviour
         }
         if (transform.position.y - posInitSaut.y < jumpHeigth && isJumping)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 1 * speed);
-            // rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            rb.velocity = new Vector2(rb.velocity.x, 1 * jumpPower);
         }
         else
         {
@@ -155,14 +157,14 @@ public class PlayerController : MonoBehaviour
 
     private void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        SceneManager.LoadScene("level1", LoadSceneMode.Single);
     }
 
     private void LoadForget()
     {
-        forgetGoLeft = globalControle.forgetGoLeft;
-        forgetJump = globalControle.forgetJump;
-        forgetSquat = globalControle.forgetSquat;
+        forgetGoLeft = GlobalControle.Instance.forgetGoLeft;
+        forgetJump = GlobalControle.Instance.forgetJump;
+        forgetSquat = GlobalControle.Instance.forgetSquat;
         hasGoLeft = false;
         hasJump = false;
         hasSquat = false;
@@ -170,8 +172,8 @@ public class PlayerController : MonoBehaviour
 
     private void SaveForget()
     {
-        globalControle.forgetSquat = forgetSquat;
-        globalControle.forgetJump = forgetJump;
-        globalControle.forgetGoLeft = forgetGoLeft;
+        GlobalControle.Instance.forgetSquat = !hasSquat;
+        GlobalControle.Instance.forgetJump = !hasJump;
+        GlobalControle.Instance.forgetGoLeft = !hasGoLeft;
     }
 }

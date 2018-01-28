@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 54680248}
   - component: {fileID: 54680250}
   - component: {fileID: 54680249}
+  - component: {fileID: 54680251}
   m_Layer: 0
   m_Name: Passagelvl3_4
   m_TagString: wallRight
@@ -212,6 +213,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
+--- !u!114 &54680251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54680247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f224487d0e749d74598468c6449fe94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &269076961
 GameObject:
   m_ObjectHideFlags: 0

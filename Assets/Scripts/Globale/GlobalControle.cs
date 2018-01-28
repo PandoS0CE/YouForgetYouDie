@@ -5,12 +5,13 @@ using UnityEngine;
 public class GlobalControle : MonoBehaviour {
 
     // Use this for initialization
-    static GlobalControle Instance;
+    public static GlobalControle Instance;
 
     // boolean oublie
-    public bool forgetJump;
-    public bool forgetSquat;
-    public bool forgetGoLeft;
+    public bool forgetJump = false;
+    public bool forgetSquat = false;
+    public bool forgetGoLeft = false;
+    public int currentLevel;
 
     void Awake()
     {
@@ -18,6 +19,7 @@ public class GlobalControle : MonoBehaviour {
         {
             DontDestroyOnLoad(gameObject);
             Instance = this;
+            currentLevel = 1;
         }
         else if (Instance != this)
         {

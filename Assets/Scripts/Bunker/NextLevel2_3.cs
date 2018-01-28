@@ -8,6 +8,6 @@ public class NextLevel2_3 : MonoBehaviour {
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        SceneManager.LoadScene("level3", LoadSceneMode.Single);
+        //SceneManager.LoadScene("level3", LoadSceneMode.Single);
     }
 }
