@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlleurZombieSauteur : IA_Ennemy {
+public class ControlleurZombieSauteur : IA_Ennemy
+{
 
     private bool isJumping = false;
     private bool canJump = true;
@@ -12,7 +13,8 @@ public class ControlleurZombieSauteur : IA_Ennemy {
     public float distanceDetectionSaut;
 
     // Update is called once per frame
-    void FixedUpdate () {
+    void FixedUpdate()
+    {
         base.FixedUpdate();
         if (Mathf.Abs(transform.position.x - cible.transform.position.x) < distanceDetectionSaut)
         {
