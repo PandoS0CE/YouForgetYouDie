@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour
         anim.enabled = true;
         buttonRestart.onClick.AddListener(Restart);
         buttonRestart.gameObject.SetActive(false);
-        print("start");
         LoadForget();
     }
 
@@ -90,7 +89,7 @@ public class PlayerController : MonoBehaviour
             print("Save");
             SaveForget();
             GlobalControle.Instance.currentLevel++;
-            string lvSuivant = "level" + (GlobalControle.Instance.currentLevel);
+            string lvSuivant = "Animation";
             SceneManager.LoadScene(lvSuivant, LoadSceneMode.Single);
 
         }
