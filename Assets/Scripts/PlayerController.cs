@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
         if(collision.collider.gameObject.CompareTag("Ground"))
         {
             canJump = true;
+            isJumping = false;
         }
 
         if (collision.collider.gameObject.CompareTag("Death"))
