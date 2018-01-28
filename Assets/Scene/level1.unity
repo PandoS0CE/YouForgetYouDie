@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 571868197}
   m_Layer: 0
   m_Name: Immeuble
-  m_TagString: Untagged
+  m_TagString: WallLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,7 +247,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 571868196}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7e23931693f13ec46a1f50b5462b70d8, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -423,6 +423,31 @@ Prefab:
       propertyPath: globalControle
       value: 
       objectReference: {fileID: 736052142}
+    - target: {fileID: 61599732338262848, guid: 5fa50b2051c869e428d887cbbea4ae55,
+        type: 2}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61599732338262848, guid: 5fa50b2051c869e428d887cbbea4ae55,
+        type: 2}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61599732338262848, guid: 5fa50b2051c869e428d887cbbea4ae55,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61599732338262848, guid: 5fa50b2051c869e428d887cbbea4ae55,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50519308276253870, guid: 5fa50b2051c869e428d887cbbea4ae55,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fa50b2051c869e428d887cbbea4ae55, type: 2}
   m_IsPrefabParent: 0
@@ -902,7 +927,7 @@ Prefab:
       objectReference: {fileID: 770893411}
     - target: {fileID: 1246704586445776, guid: 9f7342d294b02b94aa36eefd84c0d7b5, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114702017604456880, guid: 9f7342d294b02b94aa36eefd84c0d7b5,
         type: 2}
