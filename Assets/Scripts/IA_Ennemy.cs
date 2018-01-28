@@ -41,4 +41,12 @@ public class IA_Ennemy : MonoBehaviour {
             spriteRenderer.flipX = true;
         }
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("GaletteSaucisse"))
+        {
+            speed = 12;
+        }
+    }
 }

@@ -423,30 +423,19 @@ Prefab:
       propertyPath: globalControle
       value: 
       objectReference: {fileID: 736052142}
-    - target: {fileID: 61599732338262848, guid: 5fa50b2051c869e428d887cbbea4ae55,
-        type: 2}
-      propertyPath: m_AutoTiling
-      value: 0
+    - target: {fileID: 1529572104880052, guid: 5fa50b2051c869e428d887cbbea4ae55, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 61599732338262848, guid: 5fa50b2051c869e428d887cbbea4ae55,
+    - target: {fileID: 114336102945927652, guid: 5fa50b2051c869e428d887cbbea4ae55,
         type: 2}
-      propertyPath: m_UsedByComposite
-      value: 0
+      propertyPath: offsetGaletteX
+      value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 61599732338262848, guid: 5fa50b2051c869e428d887cbbea4ae55,
+    - target: {fileID: 114336102945927652, guid: 5fa50b2051c869e428d887cbbea4ae55,
         type: 2}
-      propertyPath: m_UsedByEffector
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61599732338262848, guid: 5fa50b2051c869e428d887cbbea4ae55,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50519308276253870, guid: 5fa50b2051c869e428d887cbbea4ae55,
-        type: 2}
-      propertyPath: m_Interpolate
-      value: 2
+      propertyPath: speedBullet
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fa50b2051c869e428d887cbbea4ae55, type: 2}
@@ -927,7 +916,7 @@ Prefab:
       objectReference: {fileID: 770893411}
     - target: {fileID: 1246704586445776, guid: 9f7342d294b02b94aa36eefd84c0d7b5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114702017604456880, guid: 9f7342d294b02b94aa36eefd84c0d7b5,
         type: 2}
