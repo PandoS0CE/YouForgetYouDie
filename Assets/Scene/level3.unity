@@ -330,7 +330,8 @@ Prefab:
         type: 2}
       propertyPath: globalControle
       value: 
-      objectReference: {fileID: 415164762}
+      objectReference: {fileID: 114772903249414178, guid: 81a60af21a8e2304cbd9e1b8536c659d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fa50b2051c869e428d887cbbea4ae55, type: 2}
   m_IsPrefabParent: 0
@@ -381,12 +382,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81a60af21a8e2304cbd9e1b8536c659d, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &415164762 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114772903249414178, guid: 81a60af21a8e2304cbd9e1b8536c659d,
-    type: 2}
-  m_PrefabInternal: {fileID: 415164761}
-  m_Script: {fileID: 11500000, guid: a35ee1ef236b3dc44a9f50d7a8c42c47, type: 3}
 --- !u!1 &492978175
 GameObject:
   m_ObjectHideFlags: 0
