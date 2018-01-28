@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   y: 0
   offsetX: 1
-  offsetY: 1
+  offsetY: 1.4
   player: {fileID: 0}
 --- !u!124 &124121697168277450
 Behaviour:

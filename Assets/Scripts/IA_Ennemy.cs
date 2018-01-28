@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class IA_Ennemy : MonoBehaviour {
 	public GameObject cible;
-	private int vitesse;
+    public float timeBetweenLoop = 5;
+    private int vitesse;
 	private float x_cible;
 	private int visionMin;
 	private int visionMax;
@@ -12,7 +13,20 @@ public class IA_Ennemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
+        StartCoroutine(SoundLoop());
 	}
+
+    IEnumerator SoundLoop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(timeBetweenLoop);
+            GetComponent<AudioSource>().Play();
+        }
+       
+     
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
