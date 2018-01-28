@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
     public GlobalControle globalControle;
     #endregion
 
+    // Boolean mur
+    #region
+    #endregion
     // Animations
     Animator anim;
 

@@ -27,8 +27,6 @@ public class animationTransition : MonoBehaviour {
             etat = !etat;
             
         }
-        
-
     }
 
     IEnumerator ChangeScene()
