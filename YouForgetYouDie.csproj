@@ -288,6 +288,7 @@
     <Compile Include="Assets\Scripts\Bunker\NextLevel2_3.cs" />
     <Compile Include="Assets\Scripts\CameraControllers.cs" />
     <Compile Include="Assets\Scripts\ControlleurZombieSauteur.cs" />
+    <Compile Include="Assets\Scripts\GaletteControllers.cs" />
     <Compile Include="Assets\Scripts\Globale\GlobalControle.cs" />
     <Compile Include="Assets\Scripts\IA_Ennemy.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
