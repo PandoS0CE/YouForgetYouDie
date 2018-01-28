@@ -9,9 +9,10 @@ public class IA_Ennemy : MonoBehaviour {
 	private float x_cible;
 	private int visionMin;
 	private int visionMax;
-	private Rigidbody2D rb ;
+	protected Rigidbody2D rb;
+    public float speed;
 	// Use this for initialization
-	void Start () {
+     void Start () {
 		rb = GetComponent<Rigidbody2D>();
         StartCoroutine(SoundLoop());
 	}
@@ -23,16 +24,13 @@ public class IA_Ennemy : MonoBehaviour {
             yield return new WaitForSeconds(timeBetweenLoop);
             GetComponent<AudioSource>().Play();
         }
-       
-     
-
     }
 	
 	// Update is called once per frame
-	void Update () {
+	protected void FixedUpdate () {
 		x_cible = cible.transform.position.x - this.transform.position.x;
 		x_cible = x_cible / Mathf.Abs (x_cible);
-		rb.velocity = new Vector2 (x_cible, 0);
+		rb.velocity = new Vector2 (x_cible * speed, rb.velocity.y);
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if(rb.velocity.x > 0)
         {

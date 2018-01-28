@@ -9,7 +9,7 @@ public class CameraControllers : MonoBehaviour {
     public float offsetX = 1;
     public float offsetY = 1;
     public GameObject player;
-    public int currentLevel = 1;
+
 	// Use this for initialization
 	void Start () {
 
