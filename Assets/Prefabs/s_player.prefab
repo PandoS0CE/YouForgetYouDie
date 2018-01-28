@@ -60,7 +60,7 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 8
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -74,7 +74,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -126,6 +126,11 @@ MonoBehaviour:
   forgetSquat: 0
   forgetGoLeft: 0
   globalControle: {fileID: 0}
+  galetteSaucissePrefab: {fileID: 1412343821376522, guid: 63aea1d61d8e9c84f93112003598c8b8,
+    type: 2}
+  offsetGaletteX: 0
+  offsetGaletteY: 0
+  fireTimeCooldown: 0
 --- !u!212 &212167684881684408
 SpriteRenderer:
   m_ObjectHideFlags: 1
