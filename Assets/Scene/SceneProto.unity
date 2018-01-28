@@ -530,6 +530,16 @@ Prefab:
       propertyPath: cible
       value: 
       objectReference: {fileID: 1081191272}
+    - target: {fileID: 82200762371321444, guid: 9f7342d294b02b94aa36eefd84c0d7b5,
+        type: 2}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82200762371321444, guid: 9f7342d294b02b94aa36eefd84c0d7b5,
+        type: 2}
+      propertyPath: Priority
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f7342d294b02b94aa36eefd84c0d7b5, type: 2}
   m_IsPrefabParent: 0

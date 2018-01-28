@@ -12,14 +12,13 @@ public class CameraControllers : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-       y = player.transform.position.y;
+       y = player.transform.position.y + offsetY;
 
     }
 	
 	// Update is called once per frame
 	void LateUpdate () {
         float x = player.transform.position.x + offsetX;
-   
         float z = transform.position.z;
 
         transform.position = new Vector3(x, y, z);
