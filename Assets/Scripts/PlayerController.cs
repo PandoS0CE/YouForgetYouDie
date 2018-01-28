@@ -27,13 +27,15 @@ public class PlayerController : MonoBehaviour
 
     // Boolean compétence
     #region
-    public bool forgetJump;
-    public bool forgetSquat;
-    public bool forgetGoLeft;
+    private bool forgetJump;
+    private bool forgetSquat;
+    private bool forgetGoLeft;
 
     private bool hasJump = false;
     private bool hasSquat = false;
     private bool hasGoLeft = false;
+
+    public GlobalControle globalControle;
     #endregion
 
 
@@ -45,11 +47,13 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // DontDestroyOnLoad(GetComponent  <ScriptableObject>());
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         anim.enabled = true;
         buttonRestart.onClick.AddListener(Restart);
         buttonRestart.gameObject.SetActive(false);
+        LoadForget();
     }
 
     // Update is called once per frame
@@ -84,11 +88,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        SaveForget();
+    }
+
     void Saut()
     {
-        //print("CanJump:" + canJump);
-        //print("isJumping:" + isJumping);
-
         if(!canJump)
         {
             anim.SetBool("isRunning", false);
@@ -98,10 +104,12 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
             canJump = false;
             posInitSaut = transform.position;
+            hasJump = true;
         }
         if (transform.position.y - posInitSaut.y < jumpHeigth && isJumping)
         {
-            rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            rb.velocity = new Vector2(rb.velocity.x, 1 * speed);
+            // rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
         else
         {
@@ -115,6 +123,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("down") && !forgetSquat )
         {
             anim.SetBool("isAccroupi", true);
+            hasSquat = true;
         }
         else
         {
@@ -124,17 +133,14 @@ public class PlayerController : MonoBehaviour
 
     void Deplacer()
     {
-        
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        //print(moveHorizontal);
-        if(rb.velocity.x < 0 & forgetGoLeft)
+        if (Input.GetKey("right"))
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            rb.velocity = new Vector2(1 * speed, rb.velocity.y);
         }
-        else
+        if (Input.GetKey("left") && !forgetGoLeft)
         {
-            rb.velocity = new Vector2(moveHorizontal, 0) * speed;
-
+            rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
+            hasGoLeft = true;
         }
         bool running = rb.velocity.x != 0;
         anim.SetBool("isRunning", running);    
@@ -150,5 +156,22 @@ public class PlayerController : MonoBehaviour
     private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    }
+
+    private void LoadForget()
+    {
+        forgetGoLeft = globalControle.forgetGoLeft;
+        forgetJump = globalControle.forgetJump;
+        forgetSquat = globalControle.forgetSquat;
+        hasGoLeft = false;
+        hasJump = false;
+        hasSquat = false;
+    }
+
+    private void SaveForget()
+    {
+        globalControle.forgetSquat = forgetSquat;
+        globalControle.forgetJump = forgetJump;
+        globalControle.forgetGoLeft = forgetGoLeft;
     }
 }
